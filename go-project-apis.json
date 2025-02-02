@@ -1,0 +1,60 @@
+{
+    "info": {
+        "_postman_id": "020cce69-c9c5-4d32-a22f-10db1378e68b",
+        "name": "go-project",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "localhost:8080/scan",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost:8080/scan",
+                    "path": [
+                        "scan"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"repo\":\"https://raw.githubusercontent.com/velancio/vulnerability_scans/main/\",\n  \"files\":[\"vulnscan18.json\", \"vulnscan456.json\", \"vulnscan123.json\", \"vulnscan789.json\"]\n}"
+                }
+            }
+        },
+        {
+            "name": "localhost:8080/query",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost:8080/query",
+                    "path": [
+                        "query"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"filters\":{\n    \"severity\":\"HIGH\"\n  }\n}"
+                }
+            }
+        }
+    ]
+}
