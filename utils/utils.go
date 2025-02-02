@@ -32,16 +32,23 @@ func GetFilesFromRemote(url string, files []string) {
 
 func GetFilesFromRemoteHelper(filenamePrefix string, file string) {
 	fileUrl := filenamePrefix + file
-
-	resp, err := http.Get(fileUrl)
+	var githubResponse *http.Response
+	var err error
+	for attempt := 3; attempt > 0; attempt-- {
+		githubResponse, err = http.Get(fileUrl)
+		if err == nil {
+			break
+		}
+	}
 	if err != nil {
 		fmt.Println("error in fetching file from github:", err)
 		return
 	}
-	defer resp.Body.Close()
-	body, err := io.ReadAll(resp.Body)
+
+	defer githubResponse.Body.Close()
+	body, err := io.ReadAll(githubResponse.Body)
 	if err != nil {
-		fmt.Println("error in reading request body:", err)
+		fmt.Println("error in reading response data:", err)
 		return
 	}
 
