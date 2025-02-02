@@ -3,17 +3,17 @@
 
 Running the code:
 1. On Local Machine:  
->Run `go run main.go` where `main.go` file is located
+>Run `go run main.go` in the `go-project` directory
 
 2. On Docker:
->    - building the image:
->Run `docker buildx build --platform linux/arm64 --no-cache -t go-project .`
->    - run the container:
->Run `docker run -p 8080:8080 go-project`
+>    - Building the image:  
+>Run `docker buildx build --platform linux/arm64 --no-cache -t go-project .` in the `go-project` directory
+>    - Running the container:  
+>Run `docker run -p 8080:8080 go-project` in the `go-project` directory
 
   
 Testing the code:
->1. Run `go test . -v` from where `main_test.go` file is located
+>1. Run `go test . -v` from the main `go-project` directory
 >To see code coverage and all the code lines that are covered:
 >1. Run `go test -coverprofile=coverage.out ./...`
 >2. Run `go tool cover -html=coverage.out -o coverage.html`

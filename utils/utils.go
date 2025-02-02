@@ -10,6 +10,8 @@ import (
 	"sync"
 )
 
+// Function to fetch files from Github using URL
+// and ensure concurrency when more than 3 files are provided
 func GetFilesFromRemote(url string, files []string) {
 	filenamePrefix := url
 
@@ -30,6 +32,7 @@ func GetFilesFromRemote(url string, files []string) {
 	}
 }
 
+// Helper function to fetch files from Github and write them to DB
 func GetFilesFromRemoteHelper(filenamePrefix string, file string) {
 	fileUrl := filenamePrefix + file
 	var githubResponse *http.Response
@@ -52,7 +55,7 @@ func GetFilesFromRemoteHelper(filenamePrefix string, file string) {
 		return
 	}
 
-	var scanResults []models.ScanResp2
+	var scanResults []models.ScanResp
 	err = json.Unmarshal(body, &scanResults)
 	if err != nil {
 		fmt.Println("error in unmarshalling:", err)

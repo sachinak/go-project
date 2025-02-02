@@ -10,6 +10,7 @@ import (
 	"gorm.io/gorm"
 )
 
+// Function to fetch vulnerabilities from DB using provided filters
 func GetVulnerabilitesFromDBWithFilters(filters map[string]string) []models.QueryResponse {
 
 	var payloads []models.Payload
@@ -50,6 +51,7 @@ func GetVulnerabilitesFromDBWithFilters(filters map[string]string) []models.Quer
 	return response
 }
 
+// Function to write files to DB
 func WritePayloadToDB(data models.Vulnerability, scanTime time.Time, fileName string) {
 	db, err := gorm.Open(sqlite.Open("projectDB"), &gorm.Config{})
 	if err != nil {
