@@ -19,7 +19,9 @@ Testing the code:
 >2. Run `go tool cover -html=coverage.out -o coverage.html`
 >3. Open the file `coverage.html` in any browser
 
-APIs:
+APIs:  
+A postman sample collection `go-project-apis.json` is available which can be imported directly to postman to test the APIs.  
+
 1. Scan:
 >Endpoint: /scan  
 >Request Type: POST  
