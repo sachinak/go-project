@@ -34,9 +34,9 @@ A postman sample collection `go-project-apis.json` is available which can be imp
 >} 
 >```
 >Response:
->1. HTTP Status Code 200
+>1. HTTP Status Code 200  
 >Response Body: None
->2. HTTP Status Code 400: Bad Request
+>2. HTTP Status Code 400 Bad Request  
 >Reponse Body: 
 >```
 >{
@@ -58,7 +58,7 @@ A postman sample collection `go-project-apis.json` is available which can be imp
 >}
 >```
 >Response:
->1. HTTP Status Code 200
+>1. HTTP Status Code 200  
 >Response Body: 
 >```
 >[
@@ -138,7 +138,7 @@ A postman sample collection `go-project-apis.json` is available which can be imp
 >  }
 >]
 >```
->2. HTTP Status Code 400: Bad Request
+>2. HTTP Status Code 400 Bad Request  
 >Reponse Body: 
 >```
 >{
